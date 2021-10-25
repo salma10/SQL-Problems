@@ -1,0 +1,2 @@
+select t.id, t.name from Students t
+where t.department_id not in (select id from Departments);
