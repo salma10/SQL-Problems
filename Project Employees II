@@ -1,0 +1,5 @@
+select project_id  from Project 
+group by project_id
+having count(employee_id) = (select max(emp_count)
+                             from (select count(*) as emp_count from Project 
+group by project_id) p)
